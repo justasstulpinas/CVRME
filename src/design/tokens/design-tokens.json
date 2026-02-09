@@ -14,15 +14,20 @@
       "transparent": "rgba(0,0,0,0)"
     }
   },
-  "typography": {
-    "fontFamily": {},
-    "scale": {}
+  
+  "fontFamily": {
+    "primary": "Inter"
   },
-  "spacing": {},
-  "radius": {},
-  "elevation": {},
-  "motion": {
-    "duration": {},
-    "easing": {}
+  "scale": {
+    "display": { "size": 32, "lineHeight": 40, "weight": 700 },
+    "h1": { "size": 24, "lineHeight": 32, "weight": 700 },
+    "h2": { "size": 20, "lineHeight": 28, "weight": 600 },
+    "h3": { "size": 16, "lineHeight": 24, "weight": 600 },
+    "body": { "size": 14, "lineHeight": 20, "weight": 400 },
+    "bodyMuted": { "size": 14, "lineHeight": 20, "weight": 400 },
+    "caption": { "size": 12, "lineHeight": 16, "weight": 400 },
+    "button": { "size": 14, "lineHeight": 20, "weight": 600 }
   }
 }
+
+
