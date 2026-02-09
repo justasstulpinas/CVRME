@@ -1,0 +1,20 @@
+{
+  "colors": {
+    "seed": {},
+    "background": {},
+    "surface": {},
+    "text": {},
+    "state": {}
+  },
+  "typography": {
+    "fontFamily": {},
+    "scale": {}
+  },
+  "spacing": {},
+  "radius": {},
+  "elevation": {},
+  "motion": {
+    "duration": {},
+    "easing": {}
+  }
+}
