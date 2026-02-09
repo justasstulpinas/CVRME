@@ -1,10 +1,18 @@
 {
   "colors": {
-    "seed": {},
-    "background": {},
-    "surface": {},
-    "text": {},
-    "state": {}
+    "seed": {
+      "primary": "#221A27"
+    },
+    "text": {
+      "muted": "#9E9E9E"
+    },
+    "status": {
+      "applied": "#FF9800",
+      "accepted": "#4CAF50"
+    },
+    "utility": {
+      "transparent": "rgba(0,0,0,0)"
+    }
   },
   "typography": {
     "fontFamily": {},
