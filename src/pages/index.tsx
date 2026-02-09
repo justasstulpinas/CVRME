@@ -1,17 +1,19 @@
 import { Button } from '@/components/primitives/Button'
 import { Input } from '@/components/primitives/Input'
+import { Card } from '@/components/primitives/Card'
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col gap-6 items-center justify-center">
-      <div className="w-80 flex flex-col gap-4">
-        <Input label="Email" placeholder="email@example.com" />
-        <Input label="Disabled" disabled />
-        <Input label="With helper" helperText="Helper text" />
-        <Input label="With error" error="Error text" />
-      </div>
-
-      <Button>Submit</Button>
+    <div className="min-h-screen flex items-center justify-center">
+      <Card
+        header="Login"
+        footer={<Button size="sm">Submit</Button>}
+      >
+        <div className="flex flex-col gap-4 w-72">
+          <Input label="Email" />
+          <Input label="Password" />
+        </div>
+      </Card>
     </div>
   )
 }
