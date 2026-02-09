@@ -1,5 +1,7 @@
-import clsx from 'clsx'
+// src/components/primitives/Button.tsx
+
 import { ReactNode } from 'react'
+import { Icon } from './Icon'
 
 type ButtonVariant = 'primary' | 'secondary' | 'text'
 type ButtonSize = 'sm' | 'md' | 'lg'
@@ -11,25 +13,41 @@ interface ButtonProps {
   disabled?: boolean
   onClick?: () => void
   children: ReactNode
+  iconLeft?: string
+  iconRight?: string
 }
 
 const base =
-  'inline-flex items-center justify-center rounded-md transition duration-base ease-standard focus:outline-none'
+  'inline-flex gap-2 items-center justify-center ' +
+  'rounded-md min-h-12 leading-none ' +
+  'transition duration-base ease-standard ' +
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-outline ' +
+  'focus-visible:ring-offset-2 focus-visible:ring-offset-surface ' +
+  'active:bg-[var(--overlay-pressed)]'
+
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    'bg-black text-white hover:opacity-90 disabled:opacity-40',
+    'bg-primary text-onPrimary hover:bg-primary/90 disabled:opacity-40',
+
   secondary:
-    'bg-transparent border border-black text-black hover:bg-black/5 disabled:opacity-40',
+    'bg-surface text-onSurface border border-outline ' +
+    'hover:bg-[var(--overlay-hover)] ' +
+    'disabled:opacity-40',
+
   text:
-    'bg-transparent text-black hover:underline disabled:opacity-40',
+    'bg-transparent text-onSurface ' +
+    'hover:bg-[var(--overlay-hover)] ' +
+    'disabled:opacity-40',
 }
 
+
 const sizes: Record<ButtonSize, string> = {
-  sm: 'px-3 py-1.5 text-caption',
-  md: 'px-4 py-2 text-button',
+  sm: 'px-3 py-2 text-caption',
+  md: 'px-4 py-2.5 text-button',
   lg: 'px-6 py-3 text-body',
 }
+
 
 export function Button({
   variant = 'primary',
@@ -38,15 +56,25 @@ export function Button({
   disabled,
   onClick,
   children,
+  iconLeft,
+  iconRight,
 }: ButtonProps) {
+  const className = [
+    base,
+    variants[variant],
+    sizes[size],
+  ].join(' ')
+
   return (
     <button
+      type="button"
       onClick={onClick}
       disabled={disabled || loading}
-      className={clsx(base, variants[variant], sizes[size])}
+      className={className}
     >
-      {loading ? '...' : children}
+      {iconLeft && !loading && <Icon name={iconLeft} size="sm" />}
+      {loading ? '…' : children}
+      {iconRight && !loading && <Icon name={iconRight} size="sm" />}
     </button>
   )
 }
-

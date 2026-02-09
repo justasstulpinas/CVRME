@@ -23,13 +23,13 @@ export function Card({
     <div
       className={[
         'rounded-lg',
-        'border border-black/10',
-        'bg-white',
+        'bg-surface text-onSurface',
+        'border border-outline',
         elevationMap[elevation],
       ].join(' ')}
     >
       {header && (
-        <div className="px-4 py-3 border-b border-black/10 text-body">
+        <div className="px-4 py-3 border-b border-outline text-body">
           {header}
         </div>
       )}
@@ -39,7 +39,7 @@ export function Card({
       </div>
 
       {footer && (
-        <div className="px-4 py-3 border-t border-black/10">
+        <div className="px-4 py-3 border-t border-outline">
           {footer}
         </div>
       )}

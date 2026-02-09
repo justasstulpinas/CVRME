@@ -5,6 +5,13 @@ const config: Config = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      colors: {
+        primary: 'var(--color-primary)',
+        onPrimary: 'var(--color-on-primary)',
+        surface: 'var(--color-surface)',
+        onSurface: 'var(--color-on-surface)',
+        outline: 'var(--color-outline)',
+      },
       fontFamily: {
         sans: [tokens.fontFamily.primary, 'system-ui'],
       },
@@ -35,4 +42,5 @@ const config: Config = {
   },
   plugins: [],
 }
+
 export default config
